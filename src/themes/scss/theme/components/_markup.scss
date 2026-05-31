@@ -7,7 +7,8 @@
             margin: 0 .5em .25em -1.4em;
         }
 
-        input[type=checkbox] {
+        input[type=checkbox],
+        input[type=radio] {
             --border-radius: #{var.get('measure/.25x')};
             width: var.get('measure/1x');
             height: var.get('measure/1x');
@@ -30,6 +31,10 @@
                     background-color: var(--color-primary-hover);
                 }
             }
-        }        
+        }
+
+        input[type=radio] {
+            --border-radius: var(--border-radius-full);
+        }
     }
 }
