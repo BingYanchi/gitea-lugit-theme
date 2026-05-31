@@ -1,8 +1,8 @@
 name: Release
 on:
   push:
-    tags:
-      - "v*"
+    branches:
+      - master
 
 jobs:
   release:
@@ -16,7 +16,8 @@ jobs:
       - run: npm run build
       - name: Create tarball
         run: tar czf gitea-lugit-theme.tar.gz --directory=./dist .
-      - name: Add zips to release
-        uses: softprops/action-gh-release@v2
+      - name: Artifact
+        uses: actions/upload-artifact@v4
         with:
-          files: ./gitea-lugit-theme.tar.gz
+          name: release-assets
+          path: ./gitea-lugit-theme.tar.gz
