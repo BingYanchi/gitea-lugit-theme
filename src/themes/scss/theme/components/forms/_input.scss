@@ -2,7 +2,7 @@
 @use '@lucas-labs/lui-micro/var' as var;
 
 @mixin -all-inputs($state: null) {
-    input#{$state},
+    input:not([type=checkbox])#{$state},
     textarea#{$state},
     .ui.input>input#{$state},
     .ui.form input:not([type])#{$state},
